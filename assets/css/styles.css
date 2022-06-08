@@ -1,0 +1,45 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: rgb(253, 245, 237);
+}
+
+.choice {
+    cursor: pointer;
+    height: max-content;
+    width: max-content;
+    border: none;
+    outline: none;
+    background: none;
+    margin: 1rem;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.game__instructions {
+    display: none;
+}
+.game__choices {
+    display: flex;
+}
+.game__validation {
+    display: none;
+}
+.next__turn {
+    display: none;
+}
+.next__round {
+    display: none;
+}
+.choice:focus {
+    box-shadow: 1px 1px 5px 0px rgb(191, 192, 191);
+}
+.game__scores {
+    display: flex; 
+    column-gap: 3rem;
+}
+span {
+    font-weight: 600;
+}
+

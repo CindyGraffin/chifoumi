@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!--Iconscount CDN link-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css"/>
+    <title>Chifoumi</title>
+</head>
+<body>
+    <header>
+        <h1>CHIFOUMI</h1>
+    </header>
+    <main>
+        <div class="presentation__container">
+            <div class="rules__container">
+                <h2>Les régles</h2>
+                <ul>
+                    <li>La <span>PIERRE</span> l'emporte sur les <span>CISEAUX</span>.</li>
+                    <li>Les <span>CISEAUX</span> l'emporte sur la <span>FEUILLE</span>.</li>
+                    <li>La <span>FEUILLE</span> l'emporte sur la <span>PIERRE</span>.</li>
+                </ul>
+            </div>
+            <div class="process__container">
+                <h2>Déroulement</h2>
+                <ul>
+                    <li>Une manche dure <span>5 TOURS</span>.</li>
+                    <li>Le premier joueur qui gagne <span>2 MANCHES</span> remporte la partie.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="game__container">
+            <div class="game__launcher">
+                <div class="start__launch">
+                    <button>Commencer la partie <span><i class="uil uil-play"></i></span></button>
+                </div>
+                <div class="next__turn">
+                    <button>Tour suivant <span><i class="uil uil-forward"></i></span></button>
+                </div>
+                <div class="next__round">
+                    <button>Manche suivante <span><i class="uil uil-skip-forward-alt"></i></span></button>
+                </div>
+            </div>
+            <div class="game__instructions">
+                <p>Choisissez pierrre, feuille ou ciseaux:</p>
+            </div>
+            <div class="game__choices">
+                <button class="choice" disabled="true">
+                    <img src="./assets/images/pierre.jpg" alt="pierre" id="pierre">
+                </button>
+                <button class="choice" disabled="true">
+                    <img src="./assets/images/feuille.jpg" alt="feuille" id="feuille">
+                </button>
+                <button class="choice" disabled="true">
+                    <img src="./assets/images/ciseaux.jpg" alt="ciseaux" id="ciseaux">
+                </button>
+            </div>
+            <div class="game__validation">
+                <button>Valider le choix <span><i class="uil uil-check"></i></span></button>
+            </div>
+            <div class="ia__result">
+                <p></p>
+            </div>
+            <div class="turn__result">
+                <p></p>
+            </div>
+            <div class="round__result">
+                <p></p>
+            </div>
+            <div class="scores__container">
+                <h2>Manche <span class="round">0</span> - Tour <span class="turn">0</span></h2>
+                <div class="game__scores">
+                    <div class="player__score">
+                        <h3>Votre score:</h3>
+                        <p>Points pour ce tour: <span class="player__points">0</span></p>
+                        <p>Manches gagnées: <span class="player__round__wins">0</span></p>
+                        <p>Victoires: <span class="player__wins">0</span></p>
+                        <p>Défaites: <span class="player__looses">0</span></p>
+                    </div>
+                    <div class="ia__score">
+                        <h3>Score de l'IA:</h3>
+                        <p>Points pour ce tour: <span class="ia__points">0</span></p>
+                        <p>Manches gagnées: <span class="ia__round__wins">0</span></p>
+                        <p>Victoires: <span class="ia__wins">0</span></p>
+                        <p>Défaites: <span class="ia__looses">0</span></p>
+                    </div>
+                </div>
+                <div>
+                    <p>Nombre de parties jouées: <span class="games__played">0</span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
