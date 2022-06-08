@@ -127,6 +127,8 @@ let whoWinTheTurn = (playerChoice, iaChoice) => {
 
 startGame.addEventListener('click', () => {
     if (game.turn === 0 && game.round === 0) {
+        turnResult.innerText = '';
+        iaResult.innerText = "";
         roundResult.innerText = '';
         gameResult.innerText = '' 
         startGame.style.display = 'none';
