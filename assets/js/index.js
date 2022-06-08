@@ -18,6 +18,7 @@ const gameInstructions = document.querySelector('.game__instructions');
 const turnResult = document.querySelector('.turn__result p');
 const roundResult = document.querySelector('.round__result p');
 const iaResult = document.querySelector('.ia__result');
+const gameResult = document.querySelector('.game__result');
 
 // Scores containers 
 // player
@@ -126,6 +127,8 @@ let whoWinTheTurn = (playerChoice, iaChoice) => {
 
 startGame.addEventListener('click', () => {
     if (game.turn === 0 && game.round === 0) {
+        roundResult.innerText = '';
+        gameResult.innerText = '' 
         startGame.style.display = 'none';
         validateChoice.style.display ='block'
         game.turn += 1;
@@ -159,15 +162,32 @@ validateChoice.addEventListener('click', () => {
             } else {
                 roundResult.innerText = `Personne ne remporte cette manche !` 
             } 
+            nextRound.style.display = 'block';
+            nextTurn.style.display = 'none';
             if (player.roundPoints === 2 || ia.roundPoints === 2) {
                 if (player.roundPoints === 2) {
-                    
-                    player.turnPoints = 0;
-                    player.turnPoints = 0;
+                    player.wins += 1;
+                    ia.looses += 1;
+                    gameResult.innerText = 'Le joueur remporte la partie !' 
+                    refreshPlayersScores();  
+                } else {
+                    gameResult.innerText = `L'IA remporte la partie !`
+                    ia.wins += 1;
+                    player.looses += 1;
+                    refreshPlayersScores();
                 }
-            }
-            nextRound.style.display = 'block';
-            nextTurn.style.display = 'none';      
+                player.turnPoints = 0;
+                player.roundPoints = 0;
+                ia.turnPoints = 0;
+                ia.roundPoints = 0;
+                game.turn = 0;
+                game.round = 0;
+                nextRound.style.display = 'none';
+                startGame.style.display = 'block';
+                game.numberOfGames += 1
+                refreshPlayersScores();
+                refreshRoundInfos();
+            }      
         }
     }
 })
