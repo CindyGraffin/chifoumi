@@ -56,20 +56,25 @@ let game = {
 let iaChoices = ['pierre', 'feuille', 'ciseaux'];
 let playerChoices = document.querySelectorAll('.choice');
 
+// 
 const iaChoice = () => {
     let choice = iaChoices[Math.floor(Math.random()*iaChoices.length)];
     return choice;
 }
+// function that updates informations of the round
 const refreshRoundInfos = () => {
     gamesPlayed.textContent = game.numberOfGames
     numOfTurn.textContent = game.turn
     numOfRound.textContent = game.round
 }
+// function that disable choices buttons when it's not the moment to click on
 const enableButtons = () => {
     playerChoices.forEach(choice => {
         choice.removeAttribute('disabled')
     })
 }
+
+// function that updates the choice of the player between "pierre, feuille, ciseaux"
 const refreshPlayerChoice = () => {
     playerChoices.forEach(choice => {
         choice.addEventListener('click', (e) => {
@@ -78,6 +83,8 @@ const refreshPlayerChoice = () => {
         });
     })
 }
+
+// function that updates the scores of player and ia
 const refreshPlayersScores = () => {
     playerPoints.innerText = player.turnPoints;
     playerRoundWins.innerText = player.roundPoints;
@@ -178,12 +185,7 @@ validateChoice.addEventListener('click', () => {
                     player.looses += 1;
                     refreshPlayersScores();
                 }
-                player.turnPoints = 0;
-                player.roundPoints = 0;
-                ia.turnPoints = 0;
-                ia.roundPoints = 0;
-                game.turn = 0;
-                game.round = 0;
+                player.turnPoints, player.roundPoints, ia.turnPoints, ia.roundPoints, game.turn, game.round = 0,0,0,0,0,0;
                 nextRound.style.display = 'none';
                 startGame.style.display = 'block';
                 game.numberOfGames += 1
